@@ -1,10 +1,27 @@
 import { defineConfig } from 'vite'
 import path from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
+import VueRouter from 'unplugin-vue-router/vite'
 import vue from '@vitejs/plugin-vue'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    VueRouter({
+      logs: true,
+      routesFolder: [
+        {
+          src: 'src/pages',
+        },
+      ],
+    }),
+    AutoImport({
+      imports: [
+        VueRouterAutoImports, 
+      ],
+    }),
+    vue()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
