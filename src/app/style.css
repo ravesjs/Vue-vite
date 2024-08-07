@@ -1,3 +1,21 @@
+@import 'normalize.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  /*background-color: #ffffff;
+  background-image: url('../../shared/assets/images/subtle-prism.png');
+  background-attachment: fixed;
+  background-size: cover;*/
+}
 button {
   width: 50px;
   height: 40px;
